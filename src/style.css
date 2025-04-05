@@ -48,7 +48,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 16px;
-  padding-top: 10rem;
+  padding: 10rem 16px;
 }
 
 .title {
@@ -72,7 +72,8 @@ form {
   display: flex;
   gap: 8px;
   margin-top: 1rem;
-  width: 32rem;
+  max-width: 32rem;
+  width: 100%;
 }
 
 #location,
@@ -90,6 +91,7 @@ form {
 
 #location {
   flex: 1;
+  flex-shrink: 1;
 }
 
 #location::placeholder,
@@ -100,4 +102,27 @@ form {
 
 #location:focus {
   outline-width: 0;
+}
+
+@media (max-width: 768px) {
+  .title,
+  .description {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+    padding: 8rem 16px;
+  }
+  .brand-name {
+    display: block;
+  }
+  form {
+    flex-direction: column;
+  }
+
+  #submit {
+    padding: 12px; 
+  }
 }
