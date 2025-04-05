@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather Wave</title>
-</head>
-<body>
-  <div class="bg-grid"></div>
-  <form action="#">
-    <input type="text" name="location" placeholder="Search Location">
-    <button type="submit">Search</button>
-  </form>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Wave</title>
+  </head>
+  <body>
+    <div class="bg-grid"></div>
+    <div class="container">
+      <div class="title">
+        <h1>
+          Welcome to
+          <span class="brand-name">Weather Wave</span>
+        </h1>
+      </div>
+      <p class="description">Choose a location to view its weather forecast</p>
+      <form action="#">
+        <input
+          type="text"
+          name="location"
+          id="location"
+          autocomplete="off"
+          placeholder="Search Location"
+        />
+        <button id="submit" type="submit">Search</button>
+      </form>
+    </div>
+  </body>
 </html>

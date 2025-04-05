@@ -1,14 +1,29 @@
+:root {
+  --brand-name: rgb(128, 168, 255);
+  --primary-text: rgb(230, 230, 230);
+  --muted-text: rgb(163, 170, 175);
+  --input: rgb(26, 31, 48);
+  --input-hover: rgb(33, 39, 59);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
 }
 
 body {
   width: 100vw;
   height: 100vh;
   background: rgb(35, 22, 37);
-  background: linear-gradient(0deg, rgba(35, 22, 37, 1) 0%, rgba(17, 22, 29, 1) 57%, rgba(10, 15, 33, 1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(35, 22, 37, 1) 0%,
+    rgba(17, 22, 29, 1) 57%,
+    rgba(10, 15, 33, 1) 100%
+  );
 }
 
 .bg-grid {
@@ -16,10 +31,73 @@ body {
   z-index: -1;
   width: 100vw;
   height: 100vh;
-  background-image:
-    linear-gradient(to right, rgb(203 213 225) 1px, transparent 1px),
+  background-image: linear-gradient(
+      to right,
+      rgb(203 213 225) 1px,
+      transparent 1px
+    ),
     linear-gradient(to bottom, rgb(203 213 225) 1px, transparent 1px);
   background-size: 2.5rem 2.5rem;
   background-position: center center;
   opacity: 4%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding-top: 10rem;
+}
+
+.title {
+  display: flex;
+  text-align: center;
+  gap: 8px;
+  color: var(--primary-text);
+}
+
+.brand-name {
+  color: var(--brand-name);
+}
+
+.description {
+  font-size: 18px;
+  color: var(--muted-text);
+  text-align: center;
+}
+
+form {
+  display: flex;
+  gap: 8px;
+  margin-top: 1rem;
+  width: 32rem;
+}
+
+#location,
+#submit {
+  border-radius: 8px;
+  border-style: none;
+  padding: 16px;
+  background-color: var(--input);
+  transition: 200ms all;
+}
+
+#submit:hover {
+  background-color: var(--input-hover);
+}
+
+#location {
+  flex: 1;
+}
+
+#location::placeholder,
+#location,
+#submit {
+  color: var(--muted-text);
+}
+
+#location:focus {
+  outline-width: 0;
 }

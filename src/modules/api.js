@@ -9,8 +9,8 @@ function processDataToday(data) {
     datetime: data.days[0].datetime,
     icon: data.days[0].icon,
     tempmin: data.days[0].tempmin,
+    temp: data.days[0].temp,
     tempmax: data.days[0].tempmax,
-    feelslike: data.days[0].feelslike,
     precipprob: data.days[0].precipprob,
     windspeed: data.days[0].windspeed,
     humidity: data.days[0].humidity,
@@ -47,5 +47,5 @@ export async function fetchData(country) {
   });
   const data = await response.json();
   const necessaryData = processData(data);
-  return necessaryData;
+  return data;
 }
