@@ -12,10 +12,10 @@ async function handleFormSubmit(e) {
   const country = e.target.querySelector("input").value;
 
   // Just comment this to save our api calls :,)
-  const response = await fetchData(country);
+  // const response = await fetchData(country);
   slideOutHome();
   slideInMainContent();
-  console.log(response);
+  // console.log(response);
 }
 
 function handleLogoClick() {

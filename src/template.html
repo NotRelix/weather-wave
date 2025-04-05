@@ -1,34 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather Wave</title>
-  </head>
-  <body class="preload">
-    <div class="bg-grid"></div>
-    <div class="container">
-      <div class="home">
-        <div class="title">
-          <h1>Welcome to</h1>
-          <h1 class="brand-name">Weather Wave</h1>
-        </div>
-        <p class="description">Choose a location to view its weather forecast</p>
-        <form action="#">
-          <input
-            type="text"
-            name="location"
-            id="location"
-            autocomplete="off"
-            placeholder="Search Location"
-          />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Wave</title>
+</head>
+
+<body class="preload">
+  <div class="bg-grid"></div>
+  <div class="container">
+    <div class="home">
+      <div class="title">
+        <h1>Welcome to</h1>
+        <h1 class="brand-name">Weather Wave</h1>
+      </div>
+      <p class="description">Choose a location to view its weather forecast</p>
+      <form class="form-home" action="#">
+        <input type="text" name="location" id="location" autocomplete="off" placeholder="Search Location" />
+        <button id="submit" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+  <div class="main-content main-content-hidden">
+    <div class="left">
+      <div class="top-left">
+        <button class="logo">Back</button>
+        <form class="form-main" action="#">
+          <input type="text" name="location-main" id="location-main" autocomplete="off" placeholder="Search Location" />
           <button id="submit" type="submit">Search</button>
         </form>
       </div>
+      <h1>Current Weather Info Goes Here</h1>
     </div>
-    <div class="main-content main-content-hidden">
-      <button class="logo">Back</button>
-      <h1>Main Content Goes Here</h1>
+    <div class="right">
+      <div class="weather-details">
+        <span>Today's Weather Details</span>
+        <div class="details-container">
+          <span>Rain Probability</sp>
+            <span>Wind Speed</span>
+            <span>Humidity</span>
+            <span>UV Index</span>
+        </div>
+      </div>
+      <div class="future-forecast">
+        <span>Forecast for 5 days</span>
+        <div class="future-days">
+          <span>Sunday</span>
+          <span>Monday</span>
+          <span>Tuesday</span>
+          <span>Wednesday</span>
+          <span>Thursday</span>
+        </div>
+      </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
