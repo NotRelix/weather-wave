@@ -3,3 +3,23 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: rgb(35, 22, 37);
+  background: linear-gradient(0deg, rgba(35, 22, 37, 1) 0%, rgba(17, 22, 29, 1) 57%, rgba(10, 15, 33, 1) 100%);
+}
+
+.bg-grid {
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background-image:
+    linear-gradient(to right, rgb(203 213 225) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(203 213 225) 1px, transparent 1px);
+  background-size: 2.5rem 2.5rem;
+  background-position: center center;
+  opacity: 4%;
+}
