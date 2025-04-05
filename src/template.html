@@ -5,24 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Wave</title>
   </head>
-  <body>
+  <body class="preload">
     <div class="bg-grid"></div>
     <div class="container">
-      <div class="title">
-        <h1>Welcome to</h1>
-        <h1 class="brand-name">Weather Wave</h1>
+      <div class="home">
+        <div class="title">
+          <h1>Welcome to</h1>
+          <h1 class="brand-name">Weather Wave</h1>
+        </div>
+        <p class="description">Choose a location to view its weather forecast</p>
+        <form action="#">
+          <input
+            type="text"
+            name="location"
+            id="location"
+            autocomplete="off"
+            placeholder="Search Location"
+          />
+          <button id="submit" type="submit">Search</button>
+        </form>
       </div>
-      <p class="description">Choose a location to view its weather forecast</p>
-      <form action="#">
-        <input
-          type="text"
-          name="location"
-          id="location"
-          autocomplete="off"
-          placeholder="Search Location"
-        />
-        <button id="submit" type="submit">Search</button>
-      </form>
+    </div>
+    <div class="main-content main-content-hidden">
+      <button class="logo">Back</button>
+      <h1>Main Content Goes Here</h1>
     </div>
   </body>
 </html>

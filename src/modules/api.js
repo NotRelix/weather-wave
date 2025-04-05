@@ -47,5 +47,5 @@ export async function fetchData(country) {
   });
   const data = await response.json();
   const necessaryData = processData(data);
-  return data;
+  return necessaryData;
 }
