@@ -6,7 +6,10 @@ function processDataToday(data) {
   const filteredToday = {
     resolvedAddress: data.resolvedAddress,
     conditions: data.days[0].conditions,
-    datetime: data.days[0].datetime,
+    date: data.days[0].datetime,
+    time: data.currentConditions.datetime,
+    sunrise: data.days[0].sunrise,
+    sunset: data.days[0].sunset,
     icon: data.days[0].icon,
     tempmin: data.days[0].tempmin,
     temp: data.days[0].temp,
@@ -21,7 +24,7 @@ function processDataToday(data) {
 
 function processDataNextFiveDays(data) {
   const filteredNextFiveDays = [];
-  const nextFiveDays = data.days.slice(1, 6);
+  const nextFiveDays = data.days.slice(1); // until 6
   nextFiveDays.forEach((day) => {
     const filtered = {
       conditions: day.conditions,
