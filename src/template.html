@@ -9,6 +9,7 @@
 
 <body class="preload">
   <div class="bg-grid"></div>
+  <div class="background"></div>
   <div class="container">
     <div class="home">
       <div class="title">
@@ -25,19 +26,27 @@
   <div class="main-content main-content-hidden">
     <div class="left">
       <div class="top-left">
-        <button class="logo">Back</button>
+        <button class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+          </svg>          
+        </button>
         <form class="form-main" action="#">
           <input type="text" name="location-main" id="location-main" autocomplete="off" placeholder="Search Location" />
-          <button id="submit" type="submit">Search</button>
+          <button id="submit" type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>            
+          </button>
         </form>
       </div>
       <div class="bottom-left">
         <div class="card-header">
           <div class="card-title">
             <span class="address">Strand, Westminster Greater London - United Kingdom</span>
-            <span>20:51</span>
+            <span class="time">20:51</span>
           </div>
-          <span>Sunday, April 6, 2025</span>
+          <span class="date">Sunday, April 6, 2025</span>
         </div>
         <div class="statistics">
           <div class="temp-weather">
@@ -81,7 +90,7 @@
           <div class="day">
             <span>Sun</span>
             <img src="./images/icon/clear-day-icon.png" alt="">
-            <span>Few Clouds</span>
+            <span class="condition">Few Clouds</span>
             <div class="high-low-temp">
               <span class="low-temp">10°c</span>
               <span class="high-temp">14°c</span>
@@ -90,7 +99,7 @@
           <div class="day">
             <span>Mon</span>
             <img src="./images/icon/cloudy-day-icon.png" alt="">
-            <span>Few Clouds</span>
+            <span class="condition">Few Clouds</span>
             <div class="high-low-temp">
               <span class="low-temp">10°c</span>
               <span class="high-temp">14°c</span>
@@ -99,7 +108,7 @@
           <div class="day">
             <span>Tue</span>
             <img src="./images/icon/partly-cloudy-day-icon.png" alt="">
-            <span>Few Clouds</span>
+            <span class="condition">Few Clouds</span>
             <div class="high-low-temp">
               <span class="low-temp">10°c</span>
               <span class="high-temp">14°c</span>
@@ -108,7 +117,7 @@
           <div class="day">
             <span>Wed</span>
             <img src="./images/icon/wind-day-icon.png" alt="">
-            <span>Few Clouds</span>
+            <span class="condition">Few Clouds</span>
             <div class="high-low-temp">
               <span class="low-temp">10°c</span>
               <span class="high-temp">14°c</span>
@@ -117,7 +126,7 @@
           <div class="day">
             <span>Thu</span>
             <img src="./images/icon/snow-icon.png" alt="">
-            <span>Few Clouds</span>
+            <span class="condition">Few Clouds</span>
             <div class="high-low-temp">
               <span class="low-temp">10°c</span>
               <span class="high-temp">14°c</span>

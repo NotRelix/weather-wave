@@ -7,8 +7,8 @@
   --card-background: rgb(22, 24, 41);
   --card-title: rgb(115, 111, 131);
   --icon: rgb(139, 145, 150);
-  --low-temp: rgb(146, 162, 194);
-  --high-temp: rgb(204, 108, 108);
+  --low-temp: rgb(190, 190, 190);
+  --high-temp: rgb(238, 238, 238);
 }
 
 * {
@@ -27,6 +27,14 @@
 body {
   width: 100vw;
   min-height: 100vh;
+  overflow: hidden;
+}
+
+.background {
+  position: fixed;
+  width: 100vw;
+  min-height: 100vh;
+  z-index: -2;
   background: rgb(35, 22, 37);
   background: linear-gradient(
     0deg,
@@ -34,7 +42,6 @@ body {
     rgba(17, 22, 29, 1) 57%,
     rgba(10, 15, 33, 1) 100%
   );
-  overflow: hidden;
 }
 
 svg {
@@ -65,13 +72,14 @@ svg {
 .home {
   position: absolute;
   width: 100%;
+  top: 30%;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 16px;
-  padding: 10rem 16px;
+  padding: 0 16px;
 }
 
 .home-out {
@@ -105,6 +113,7 @@ svg {
   width: 100%;
 }
 
+.logo,
 #location,
 #location-main,
 #submit {
@@ -115,6 +124,7 @@ svg {
   transition: 200ms all;
 }
 
+.logo:hover,
 #submit:hover {
   background-color: var(--input-hover);
 }
@@ -141,13 +151,14 @@ svg {
 .form-main {
   display: flex;
   gap: 8px;
-  flex: 1;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
-#location-main {
-  flex: 1;
+.form-main input {
+  flex: 1 1 auto;
+  min-width: 0;
 }
-
 
 /* Main Content */
 .main-content {
@@ -208,13 +219,9 @@ svg {
 
 .top-left {
   display: flex;
+  width: 100%;
+  flex-shrink: 1;
   gap: 8px;
-}
-
-.logo {
-  border-radius: 8px;
-  height: auto;
-  width: 64px;
 }
 
 /* Bottom Left Card */
@@ -253,6 +260,11 @@ svg {
   text-overflow: ellipsis;
 }
 
+.date {
+  font-size: 14px;
+  color: var(--muted-text);
+}
+
 .statistics {
   display: flex;
   justify-content: space-between;
@@ -282,11 +294,22 @@ svg {
 }
 
 /* Top Right */
-
 .weather-details,
 .future-forecast {
+  font-size: 14px;
   padding: 24px;
   gap: 16px;
+}
+
+.logo svg,
+.form-main svg,
+.weather-details svg {
+  width: 24px;
+}
+
+.logo,
+.form-main #submit {
+  padding: 8px 12px;
 }
 
 .details-title {
@@ -303,6 +326,7 @@ hr {
 .day img {
   width: 5rem;
   opacity: 80%;
+  align-self: center;
 }
 
 .future-days {
@@ -316,12 +340,11 @@ hr {
   text-align: center;
 }
 
-.day img {
-  align-self: center;
+.condition {
+  margin-bottom: 8px;
 }
 
 .day .high-low-temp {
-  margin-top: 8px;
   color: var(--primary-text);
 }
 
@@ -366,9 +389,64 @@ hr {
     transform: translate(-50%, 0) translateY(100vh);
   }
 
+  .card-header {
+    font-size: 12px;
+  }
+
+  .temperature {
+    font-size: 36px;
+  }
+
+  .temp-weather span {
+    font-size: 12px;
+  }
+
+  .statistics {
+    margin-top: 4rem;
+  }
+
+  .statistics img {
+    width: 150px;
+  }
+
   .bottom-left {
-    max-height: 22rem;
-    gap: 0;
+    gap: 32px;
+  }
+
+  .right {
+    gap: 8px;
+  }
+
+  .details-title {
+    display: none;
+  }
+
+  .future-forecast {
+    padding: 24px 4px;
+  }
+
+  .future-days {
+    justify-content: space-around;
+  }
+
+  .day {
+    gap: 4.3rem;
+  }
+
+  .day img {
+    position: absolute;
+    margin-top: 16px;
+    width: 4rem;
+  }
+
+  .condition {
+    display: none;
+  }
+
+  .high-low-temp {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
 }
 
@@ -381,7 +459,7 @@ hr {
 
 @media (max-width: 425px) {
   .home {
-    padding: 8rem 16px;
+    top: 20%;
   }
   .title,
   .form-home {
