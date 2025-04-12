@@ -34,6 +34,7 @@ body {
     rgba(17, 22, 29, 1) 57%,
     rgba(10, 15, 33, 1) 100%
   );
+  overflow: hidden;
 }
 
 svg {
@@ -60,6 +61,9 @@ svg {
 
 /* Home Page */
 .home {
+  position: absolute;
+  width: 100%;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -148,6 +152,7 @@ svg {
   display: flex;
   justify-content: center;
   position: fixed;
+  padding: 24px 24px;
   gap: 24px;
   top: 50%;
   left: 50%;
@@ -159,6 +164,7 @@ svg {
 }
 
 .main-content-hidden {
+  display: none;
   transform: translate(-50%, -50%) translateY(100vh);
   opacity: 0;
   pointer-events: none;
@@ -344,6 +350,26 @@ hr {
 }
 
 
+@media (max-width: 1050px) {
+  .main-content {
+    flex-direction: column;
+    position: relative;
+    top: auto;
+    max-width: 34rem;
+    gap: 8px;
+    transform: translate(-50%, 0);
+  }
+
+  .main-content-hidden {
+    transform: translate(-50%, 0) translateY(100vh);
+  }
+
+  .bottom-left {
+    max-height: 22rem;
+    gap: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .title,
   .description {
@@ -355,9 +381,7 @@ hr {
   .home {
     padding: 8rem 16px;
   }
-  .title {
-    flex-direction: column;
-  }
+  .title,
   .form-home {
     flex-direction: column;
   }

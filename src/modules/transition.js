@@ -9,11 +9,23 @@ export function slideOutHome() {
 }
 
 export function slideInMainContent() {
+  const body = document.querySelector("body");
   const mainContent = document.querySelector(".main-content");
-  mainContent.classList.remove("main-content-hidden");
+  mainContent.style.display = "flex";
+  setTimeout(() => {
+    mainContent.classList.remove("main-content-hidden");
+  }, 10);
+  setTimeout(() => {
+    body.style.overflow = "visible";
+  }, 500);
 }
 
 export function slideOutMainContent() {
+  const body = document.querySelector("body");
   const mainContent = document.querySelector(".main-content");
+  body.style.overflow = "hidden";
   mainContent.classList.add("main-content-hidden");
+  setTimeout(() => {
+    mainContent.style.display = "none";
+  }, 500);
 }
