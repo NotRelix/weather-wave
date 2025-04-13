@@ -53,7 +53,22 @@ function displayStatistics(response) {
   }
 }
 
+function displayWeatherDetails(response) {
+  const rainProbability = document.querySelector(".rain-probability");
+  rainProbability.textContent = `${Math.round(response.today.precipprob)}%`;
+
+  const windSpeed = document.querySelector(".wind-speed");
+  windSpeed.textContent = `${response.today.windspeed.toFixed(1)} Km/h`;
+
+  const humidity = document.querySelector(".humidity");
+  humidity.textContent = `${Math.round(response.today.humidity)}%`;
+
+  const uvIndex = document.querySelector(".uv-index");
+  uvIndex.textContent = response.today.uvindex;
+}
+
 export function displayApiContent(response) {
   displayCardHeader(response);
   displayStatistics(response);
+  displayWeatherDetails(response);
 }
