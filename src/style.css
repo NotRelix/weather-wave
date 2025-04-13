@@ -63,7 +63,7 @@ svg {
     ),
     linear-gradient(to bottom, rgb(203 213 225) 1px, transparent 1px);
   background-size: 2.5rem 2.5rem;
-  background-position: calc(50% + 12px) calc(50% + 12px);
+  background-position: calc(50% + 12px) calc(50% + 6px);
   opacity: 4%;
   pointer-events: none;
 }

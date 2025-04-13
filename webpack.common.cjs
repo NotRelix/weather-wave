@@ -1,5 +1,7 @@
 const path = require("path");
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { supportedLocales } = require("./config");
 
 module.exports = {
   mode: "development",
@@ -13,6 +15,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/template.html",
     }),
+    new webpack.ContextReplacementPlugin(
+      /date-fns[/\\]locale/,
+      new RegExp(`(${supportedLocales.join("|")}).js$`),
+    ),
   ],
   module: {
     rules: [
