@@ -27,9 +27,11 @@ export function slideInMainContent() {
 export function slideOutMainContent() {
   const body = document.querySelector("body");
   const mainContent = document.querySelector(".main-content");
+  const input = document.querySelector("#location-main");
   body.style.overflow = "hidden";
   mainContent.classList.add("main-content-hidden");
   setTimeout(() => {
     mainContent.style.display = "none";
+    input.value = "";
   }, 500);
 }
