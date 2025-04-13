@@ -5,7 +5,11 @@ export function slideInHome() {
 
 export function slideOutHome() {
   const home = document.querySelector(".home");
+  const input = document.querySelector("#location");
   home.classList.add("home-out");
+  setTimeout(() => {
+    input.value = "";
+  }, 500);
 }
 
 export function slideInMainContent() {
