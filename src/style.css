@@ -230,12 +230,17 @@ svg {
   flex-direction: column;
   gap: 10rem;
   justify-content: space-between;
-  background-image: url(images/background/clear-night.png);
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(61, 61, 61, 0.5)
+  ),
+  url(images/background/partly-cloudy-day.png);
   background-size: cover;
   background-position: center;
   width: 100%;
   height: 100%;
   padding: 24px;
+  
 }
 
 .card-header {
@@ -262,7 +267,7 @@ svg {
 
 .date {
   font-size: 14px;
-  color: var(--muted-text);
+  opacity: 90%;
 }
 
 .statistics {
@@ -279,6 +284,10 @@ svg {
   flex-direction: column;
   justify-content: end;
   gap: 8px;
+}
+
+.icon-today {
+  opacity: 80%;
 }
 
 .temperature {

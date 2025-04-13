@@ -1,7 +1,11 @@
 import { convertToCelsius } from "../utils/convertTemp";
 import { isDayTime } from "../utils/dayOrNight";
 import { convertToMilitaryTime, formatExactDate } from "../utils/formatDate";
-import { formatCondition } from "../utils/formatText";
+import {
+  formatBackgroundLocation,
+  formatCondition,
+  formatIconLocation,
+} from "../utils/formatText";
 
 function displayCardHeader(response) {
   const address = document.querySelector(".address");
@@ -14,7 +18,7 @@ function displayCardHeader(response) {
   date.textContent = formatExactDate(response.today.date);
 }
 
-function displayStatistics(response) {
+async function displayStatistics(response) {
   const temperature = document.querySelector(".temperature");
   const tempnow = response.today.temp;
   temperature.textContent = `${convertToCelsius(tempnow)}°c`;
@@ -32,25 +36,17 @@ function displayStatistics(response) {
   const bottomLeft = document.querySelector(".bottom-left");
   const iconToday = document.querySelector(".icon-today");
 
-  import(`../images/background/${response.today.icon}-${dayStatus}.png`).then(
-    (backgroundImage) => {
-      bottomLeft.style.backgroundImage = `url(${backgroundImage.default})`;
-    },
+  const backgroundLocation = await formatBackgroundLocation(
+    response.today.icon,
+    dayStatus,
   );
+  const iconLocation = await formatIconLocation(response.today.icon, dayStatus);
 
-  if (response.today.icon !== "snow") {
-    import(`../images/icon/${response.today.icon}-${dayStatus}-icon.png`).then(
-      (iconImage) => {
-        iconToday.src = iconImage.default;
-      },
-    );
-  } else {
-    import(`../images/icon/${response.today.icon}-icon.png`).then(
-      (iconImage) => {
-        iconToday.src = iconImage.default;
-      },
-    );
-  }
+  bottomLeft.style.backgroundImage = `linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(61, 61, 61, 0.5)
+  ), url(${backgroundLocation})`;
+  iconToday.src = iconLocation;
 }
 
 function displayWeatherDetails(response) {
