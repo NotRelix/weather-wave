@@ -392,6 +392,7 @@ hr {
     max-width: 34rem;
     gap: 8px;
     transform: translate(-50%, 0);
+    padding: 12px 8px;
   }
 
   .main-content-hidden {
