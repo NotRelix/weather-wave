@@ -355,6 +355,9 @@ hr {
 
 .day .high-low-temp {
   color: var(--primary-text);
+  display: flex;
+  justify-content: center;
+  gap: 4px;
 }
 
 .high-low-temp .low-temp {

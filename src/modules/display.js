@@ -1,6 +1,10 @@
 import { convertToCelsius } from "../utils/convertTemp";
 import { isDayTime } from "../utils/dayOrNight";
-import { convertToMilitaryTime, formatExactDate } from "../utils/formatDate";
+import {
+  convertToMilitaryTime,
+  formatDayOfTheWeekShort,
+  formatExactDate,
+} from "../utils/formatDate";
 import {
   formatBackgroundLocation,
   formatCondition,
@@ -63,8 +67,48 @@ function displayWeatherDetails(response) {
   uvIndex.textContent = response.today.uvindex;
 }
 
+async function displayForecast(response) {
+  const nextFiveDays = response.nextFiveDays;
+  const futureDays = document.querySelector(".future-days");
+  futureDays.textContent = "";
+  nextFiveDays.map(async (day) => {
+    const dayDiv = document.createElement("div");
+    dayDiv.classList.add("day");
+    futureDays.appendChild(dayDiv);
+
+    const span = document.createElement("span");
+    span.textContent = formatDayOfTheWeekShort(day.datetime);
+    dayDiv.appendChild(span);
+
+    const iconLocation = await formatIconLocation(day.icon, "day");
+    const icon = document.createElement("img");
+    icon.src = iconLocation;
+    dayDiv.appendChild(icon);
+
+    const condition = document.createElement("span");
+    condition.classList.add("condition");
+    condition.textContent = formatCondition(day.icon);
+    dayDiv.appendChild(condition);
+
+    const highLowTemp = document.createElement("div");
+    highLowTemp.classList.add("high-low-temp");
+    dayDiv.appendChild(highLowTemp);
+
+    const lowTemp = document.createElement("span");
+    lowTemp.classList.add("low-temp");
+    lowTemp.textContent = `${convertToCelsius(day.tempmin)}°c`;
+    highLowTemp.appendChild(lowTemp);
+
+    const highTemp = document.createElement("span");
+    highTemp.classList.add("high-temp");
+    highTemp.textContent = `${convertToCelsius(day.tempmax)}°c`;
+    highLowTemp.appendChild(highTemp);
+  });
+}
+
 export function displayApiContent(response) {
   displayCardHeader(response);
   displayStatistics(response);
   displayWeatherDetails(response);
+  displayForecast(response);
 }

@@ -23,3 +23,8 @@ export function formatExactDate(day) {
   const convertedDate = new Date(day);
   return format(convertedDate, "cccc, MMMM dd, yyyy");
 }
+
+export function formatDayOfTheWeekShort(day) {
+  const convertedDate = new Date(day);
+  return format(convertedDate, "iii");
+}

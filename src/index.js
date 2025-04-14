@@ -13,12 +13,10 @@ async function handleFormSubmit(e) {
   const country = e.target.querySelector("input").value;
 
   try {
-    // Just comment this to save our api calls :,)
     const response = await fetchData(country);
     slideOutHome();
     slideInMainContent();
     displayApiContent(response);
-    console.log(response);
   } catch (error) {
     console.log(error);
   }
@@ -33,7 +31,6 @@ async function handleFormSubmitMain(e) {
   e.preventDefault();
   const country = e.target.querySelector("input").value;
   const input = document.querySelector("#location-main");
-  console.log(country);
   try {
     const response = await fetchData(country);
     displayApiContent(response);

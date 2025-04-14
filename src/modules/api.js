@@ -24,7 +24,7 @@ function processDataToday(data) {
 
 function processDataNextFiveDays(data) {
   const filteredNextFiveDays = [];
-  const nextFiveDays = data.days.slice(1); // until 6
+  const nextFiveDays = data.days.slice(1, 6);
   nextFiveDays.forEach((day) => {
     const filtered = {
       conditions: day.conditions,
