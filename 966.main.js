@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkweather_wave=self.webpackChunkweather_wave||[]).push([[966],{966:(e,a,p)=>{e.exports=p.p+"3e1a610347d7d2ed3568.png"}}]);
