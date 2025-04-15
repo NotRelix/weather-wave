@@ -10,7 +10,7 @@
 
 ## Features
 - Location Search - Allow users to search any country, city, street.
-- User Friendly Experience - Users can check on their phone while outside away from home.
+- User Friendly Experience - Users can easily navigate on their phone while away from home.
 - ES6 Modules - Code is separated into modules for better reusability.
 - Webpack - Bundle and optizime files for production.
 - API - Making API calls to provide real-time weather information.
